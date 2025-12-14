@@ -1,0 +1,38 @@
+digraph FamilyTree {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fontname="Arial", margin=0.2];
+    edge [arrowsize=0.8];
+
+    // --- Nodes ---
+    "cecil" [fillcolor="#8ecae6"];
+    "evelyn" [fillcolor="#ffb6c1"];
+    "luis" [fillcolor="#8ecae6"];
+    "mario" [fillcolor="#8ecae6"];
+    "nathaniel" [fillcolor="#8ecae6"];
+    "olga" [fillcolor="#ffb6c1"];
+    "randy" [fillcolor="#8ecae6"];
+    "rosalie" [fillcolor="#dddddd"];
+
+    // --- Generational Ranks ---
+    { rank=same; "evelyn"; "randy"; }
+    { rank=same; "luis"; "mario"; "olga"; }
+    { rank=same; "cecil"; "nathaniel"; "rosalie"; }
+
+    // --- Parent-Child Relationships ---
+    "evelyn" -> "luis" [color="#555555", penwidth=1.5];
+    "randy" -> "luis" [color="#555555", penwidth=1.5];
+    "evelyn" -> "mario" [color="#555555", penwidth=1.5];
+    "randy" -> "mario" [color="#555555", penwidth=1.5];
+    "evelyn" -> "olga" [color="#555555", penwidth=1.5];
+    "randy" -> "olga" [color="#555555", penwidth=1.5];
+    "olga" -> "nathaniel" [color="#555555", penwidth=1.5];
+    "luis" -> "nathaniel" [color="#555555", penwidth=1.5];
+    "olga" -> "cecil" [color="#555555", penwidth=1.5];
+    "luis" -> "cecil" [color="#555555", penwidth=1.5];
+
+    // --- Marriages ---
+    "cecil" -> "rosalie" [style=dashed, color="#d17b88", dir=none, penwidth=2.0, constraint=false];
+    "evelyn" -> "randy" [style=dashed, color="#d17b88", dir=none, penwidth=2.0, constraint=false];
+    "luis" -> "olga" [style=dashed, color="#d17b88", dir=none, penwidth=2.0, constraint=false];
+
+}
